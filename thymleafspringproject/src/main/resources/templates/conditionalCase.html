@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<h2>this is conditional cases</h2>
+	<h1> user is <span th:style="${isActive}? 'color:green':'color:red'" 
+	                   th:text="${isActive} ?'Active':'InActive'">
+	                   </span>
+	</h1>
+	<h1 th:if="${gender}=='male'">male</h1>
+	<h1 th:unless="${gender}=='male'">female</h1>
+	<div th:switch="${#lists.size(namelist)}">
+	<h1 th:case="'0'">list contain zero element</h1>
+	<h1 th:case="'1'">list contain one element</h1>
+	<h1 th:case="*">list contain more then one element</h1>
+	</div>
+</body>
+</html>
